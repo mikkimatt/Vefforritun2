@@ -1,0 +1,127 @@
+:root {
+  --font-base-size: 16px;
+  --font-base-family: Helvetica, Arial, sans-serif;
+  --max-width: 56rem;
+  --spacing: 1rem;
+  --color-border: #ddd;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-repeat: no-repeat;
+  background-image: url("images/fotbolti_Gras.jpg");
+  background-size: cover;
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: var(--spacing);
+}
+
+h1{
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: var(--spacing);
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+h2,
+h3,
+p {
+  color: #fff;
+  margin-bottom: var(--spacing);
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+ul {
+  padding-left: var(--spacing);
+}
+
+ul li {
+  margin-bottom: calc(var(--spacing) / 2);
+  list-style-type: none;
+}
+
+.table {
+  margin-bottom: var(--spacing);
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+
+  overflow-y: auto;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid var(--color-border);
+  padding: calc(var(--spacing) / 2);
+}
+
+th {
+  /* Takki fari ekki í nýja línu */
+  white-space: nowrap;
+}
+
+th button {
+  background-color: var(--color-border);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: calc(var(--spacing) / 2);
+  padding: calc(var(--spacing) / 2);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 14px 16px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.box {
+  flex: 1;
+  background-color: transparent;
+  margin: 15px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: transparent;
+}
+
