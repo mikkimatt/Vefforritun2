@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "cpy": "^11.0.0",
+    "cpy-cli": "^5.0.0",
     "fs": "^0.0.1-security"
   }
 }
