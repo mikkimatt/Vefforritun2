@@ -11,9 +11,15 @@ async function indexRoute(req, res) {
 }
 
 async function leikirRoute(req, res) {
+  const games = await getAllGames(true);
+  if (games === null) {
+    return res.status(500).send('Villa við að sækja leiki');
+  }
+
   return res.render('leikir', {
     title: 'Leikir',
     time: new Date().toISOString(),
+    games,
   });
 }
 

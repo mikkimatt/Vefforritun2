@@ -1,5 +1,4 @@
 import pg from 'pg';
-import moment from 'moment';
 
 const { DATABASE_URL: connectionString } = process.env;
 const db = new pg.Pool({ connectionString});
@@ -41,11 +40,10 @@ export async function getAllGames() {
   const result = await query(q);
 
   if (result) {
-    return result.rows, ({ date }) => moment(date).format('DD MMMM YYYY')) :
-    result.rows;
+    return result.rows
   }
 
-  return [];
+  return null;
 }
 
 export async function createGame(game){
@@ -60,22 +58,22 @@ export async function createGame(game){
 
 export async function updateGame(
   id,
-  { date, homeName, awayName, homeScore, awayScore } = {}
+  { date, home, away, homeScore, awayScore } = {}
 ) {
   const q = `
-    UPDATE events
+    UPDATE games
       SET
         date = $1,
-        homeName = $2,
-        awayName = $3,
+        home = $2,
+        away = $3,
         homeScore = $4,
         awayScore = $5,
         updated = CURRENT_TIMESTAMP
     WHERE
       id = $6
-    RETURNING id, date, homeName, awayName, homeScore, awayScore;
+    RETURNING id, date, home, away, homeScore, awayScore;
   `;
-  const values = [date, homeName, awayName, homeScore, awayScore, id];
+  const values = [date, home, away, homeScore, awayScore, id];
   const result = await query(q, values);
 
   if (result && result.rowCount === 1) {

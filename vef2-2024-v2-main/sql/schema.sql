@@ -6,8 +6,8 @@ create table if not exists public.teams (
 create table if not exists public.games(
   id serial primary key
   date date not null,
-  homeName varchar(255) not null UNIQUE,
-  awayName varchar(255) not null UNIQUE,
+  home integer not null UNIQUE,
+  away integer not null UNIQUE,
   homeScore integer not null,
   awayScore integer not null,
   foreign key(home) references teams(id),
