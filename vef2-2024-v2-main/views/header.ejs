@@ -5,28 +5,34 @@
   <meta charset="utf-8">
   <title><%= locals.title ?? '' %></title>
   <link rel="stylesheet" href="/styles.css">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Boxicons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- Remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<header>
-  <div class="header-content">
-    <a href="/">
-      <img src="./images/logo.png" alt="Logo" class="logo">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="/leikir">Síðustu leikir</a></li>
-        <li><a href="/stada">Staðan í deildinni</a></li>
-        <li class="hover-container">
-          <% if (locals.loggedIn) { %>
-            <div class="user-info">
-              Innsrkáður notandi: <%= locals.user.name %> (<%= locals.user.username %>)
-            </div>
-          <% } else { %>
-            <div class="not-logged-in"><a href="/admin">Innskrá</a></div>
-          <% } %>
-        </li>
-      </ul>
-    </nav>
-  </div>
+<header id="header">
+  <a href="/">
+    <img src="./images/logo.png" alt="Logo" class="logo">
+  </a>
+  <ul class="navlist">
+    <li><a href="/leikir">Síðustu leikir</a></li>
+    <li><a href="/stada">Staðan í deildinni</a></li>
+    <li>
+        <% if (locals.loggedIn) { %>
+          Innsrkáður notandi: <%= locals.user.name %> (<%= locals.user.username %>)
+        <% } else { %>
+          <a href="/admin">Innskrá</a>
+        <% } %>
+    </li>
+  </ul>
+
+  <div class="bx bx-menu" id="menu-icon"></div>
 </header>
 

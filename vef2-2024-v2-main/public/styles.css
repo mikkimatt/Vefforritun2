@@ -5,182 +5,245 @@
   --max-width: 56rem;
   --spacing: 1rem;
   --color-border: #ddd;
+  --color-light: #aef359;
+  --color-mid: #03c04a;
+  --color-dark: #017201;
 }
 
-html, body {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: var(--font-base-family);
-  font-size: var(--font-base-size);
-  color: #fff;
-  background: url("images/fotbolti_Gras.jpg") no-repeat 50% 50%;
-  background-size: cover;
-}
-
-h1, h2, h3, p, a {
-  margin-bottom: var(--spacing);
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
   text-decoration: none;
-  text-align: center;
-}
-
-h1 {
-  color: #fff;
-}
-
-a {
-  color: #fff;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-h2, h3, p {
-  font-weight: 600;
 }
 
 body {
-  overflow-x: hidden;
+  background: linear-gradient(245.59deg, var(--color-light) 0%, var(--color-mid) 28.53%, var(--color-dark) 75.52%);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
+/* header styles */
+
+#header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
+  transition: top 0.3s ease-in-out;
+}
+
+
+.logo {
+  max-width: 280px;
+  max-height: 90px;
+  cursor: pointer;
+}
+
+.navlist {
+  display: flex;
+}
+
+.navlist a {
+  color: white;
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all .55s ease;
+}
+
+.navlist a:hover {
+  border-bottom: 2px solid white;
+}
+
+#menu-icon{
+  color: white;
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+
+
+/* Index styles */
+
+.hero{
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+section{
+  padding: 0 19%;
+}
+
+.hero-text h1{
+  font-family: 'Kanit', sans-serif;
+  font-size: 30px;
+  white-space: nowrap;
+  line-height: 1;
+  color: white;
+  margin: 0 0 45px;
+}
+
+.hero-text p{
+  color: white;
+  font-size: 20px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.hero-img img{
+  width: 700px;
+  height: auto;
+}
+
+.hero-text a{
+  display: inline-block;
+  color: white;
+  background: var(--color-light);
+  border: 1px solid transparent;
+  padding: 12px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all .55s ease;
+}
+
+.hero-text a:hover{
+  background: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+
+.icons{
+  position: absolute;
+  top: 50%;
+  padding: 0 9%;
+  transform: translateY(-50%);
+}
+
+.icons i{
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  color: white;
+  transition: all .50s ease;
+}
+
+.icons i:hover{
+  color: var(--color-light);
+  transform: translateY(-5px);
+}
+
+
+@media (max-width: 1535px){
+  #header{
+      padding: 15px 3%;
+  }
+  .icons{
+      padding: 0 3%;
+      transition: .2s;
   }
 }
 
-/* Footer styles */
-footer {
-  background-color: #00ab00;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+@media (max-width: 1460px){
+  section{
+      padding: 0 12%;
+      transition: .2s;
+  }
 }
 
-/* Header styles */
-.header-content {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
+@media (max-width: 1340px){
+  .hero-img{
+      width: 100%;
+      height: auto;
+  }
+  .hero-text h3{
+      font-size: 30px;
+      margin: 0 0 30px;
+  }
+}
+@media (max-width: 1240px){
+  section{
+      padding: 0 3%;
+      transition: .2s;
+  }
+  .hero-text{
+      padding-top: 115px;
+  }
+  .hero-img{
+      text-align: center;
+  }
+  .hero-img img{
+      width: 560px;
+      height: auto;
+  }
+  .hero{
+      height: 100%;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+  }
+  .icons{
+      display: none;
+  }
+}
+@media (max-width: 1125px){
+  #menu-icon{
+      display: block;
+  }
+  .navlist{
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 300px;
+      height: 40vh;
+      background: #e62727;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px 20px;
+      transition: all .55s ease;
+  }
+  .navlist a{
+      margin-left: 0;
+      display: block;
+      margin: 7px 0;
+  }
+  .navlist.open{
+      right: 0;
+  }
+  .container {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      align-items: center; /* Center the cards vertically */
+  }
+
+  .card {
+      width: 70%;
+      transform: translateY(10px);
+  }
+  input:checked + label {
+      width: 500px;
+  }
 }
 
-header {
-  width: 100%;
-  background: #00ab00;
-  border: 2px solid #00ab00;
-}
-
-header::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.logo {
-  float: left;
-  padding: 10px 0;
-  max-width: 280px;
-  max-height: 90px;
-}
-
-nav {
-  float: right;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 23px;
-  position: relative;
-}
-
-nav a {
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
-nav a:hover {
-  color: #017201;
-}
-
-nav a::before {
-  content: '';
-  display: block;
-  height: 5px;
-  background-color: #017201;
-  position: absolute;
-  width: 0%;
-  top: 0;
-}
-
-nav a:hover::before {
-  width: 100%;
-  transition: 0.5s;
-}
-
-nav .user-info,
-nav .not-logged-in {
-  color: white;
-  text-align: center;
-}
-
-nav .not-logged-in a {
-  font-weight: bold;
-}
-
-nav .not-logged-in a:hover {
-  color: #017201;
-}
-
-nav .user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hover-container:hover .user-info::before,
-.hover-container:hover .not-logged-in a::before {
-  width: 100%;
-  transition: 0.5s;
-}
-
-/* Index styles */
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: transparent;
-  margin: 15px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.box-leikir,
-.box-stada {
-  background-color: #00ab00;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 50px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.box .box-leikir:hover {
-  background-color: #017201;
-}
-
-.box .box-stada:hover {
-  background-color: #017201;
+@media (max-width: 680px){
+  .hero-img img{
+      width: 100%;
+      height: auto;
+  }
 }

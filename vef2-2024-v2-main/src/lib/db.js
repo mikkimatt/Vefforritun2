@@ -1,8 +1,5 @@
-import { readFile } from 'fs/promises';
 import pg from 'pg';
-
-const SCHEMA_FILE = './sql/schema.sql';
-const DROP_SCHEMA_FILE = './sql/drop.sql';
+import moment from 'moment';
 
 const { DATABASE_URL: connectionString } = process.env;
 const db = new pg.Pool({ connectionString});
@@ -33,40 +30,32 @@ export async function query(q, values = []) {
   }
 }
 
-export async function createSchema(schemaFile = SCHEMA_FILE) {
-  const data = await readFile(schemaFile);
+export async function getAllGames() {
+  const q = `SELECT
+  games.id, date, home_score, away_score, home, away
+ FROM
+   games
+ LEFT JOIN teams home ON home.id = home
+ LEFT JOIN teams away ON away.id = away
+ ORDER BY date ASC;`;
+  const result = await query(q);
 
-  return query(data.toString('utf-8'));
+  if (result) {
+    return result.rows, ({ date }) => moment(date).format('DD MMMM YYYY')) :
+    result.rows;
+  }
+
+  return [];
 }
 
-export async function dropSchema(dropFile = DROP_SCHEMA_FILE) {
-  const data = await readFile(dropFile);
-
-  return query(data.toString('utf-8'));
-}
-
-export async function createGame({
-  date,
-  homeName,
-  awayName,
-  homeScore,
-  awayScore,
-} = {}) {
+export async function createGame(game){
   const q = `
   INSERT INTO games
     (date, homeName, awayName, homeScore, awayScore)
   VALUES
-  ($1, $2, $3, $4, $5)
-  RETURNING id, date, homeName, awayName, homeScore, awayScore`;
-  const values = [date, homeName, awayName, homeScore, awayScore];
-
-  const result = await query(q, values);
-
-  if (result && result.rowCount === 1) {
-    return result.rows[0];
-  }
-
-  return null;
+  ($1, $2, $3, $4, $5)`
+  const result = await query(q, game);
+  return result;
 }
 
 export async function updateGame(
