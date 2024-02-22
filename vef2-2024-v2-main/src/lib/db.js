@@ -1,7 +1,7 @@
 import pg from 'pg';
 
 const { DATABASE_URL: connectionString } = process.env;
-const db = new pg.Pool({ connectionString});
+const db = new pg.Pool({connectionString});
 
 db.on('error', (err) => {
   console.error('Villa í tengingu við gagnagrunn, forrit hættir', err);
@@ -9,13 +9,7 @@ db.on('error', (err) => {
 });
 
 export async function query(q, values = []) {
-  let client;
-  try {
-    client = await db.connect();
-  } catch (e) {
-    console.error('unable to get client from pool', e);
-    return null;
-  }
+  const client = await db.connect();
 
   try {
     const result = await client.query(q, values);
@@ -32,11 +26,11 @@ export async function query(q, values = []) {
 export async function getAllGames() {
   const q = `SELECT
   games.id, date, home_score, away_score, home, away
- FROM
-   games
- LEFT JOIN teams home ON home.id = home
- LEFT JOIN teams away ON away.id = away
- ORDER BY date ASC;`;
+  FROM
+  games
+  LEFT JOIN teams home ON home.id = home
+  LEFT JOIN teams away ON away.id = away
+  ORDER BY date ASC;`;
   const result = await query(q);
 
   if (result) {
@@ -46,10 +40,22 @@ export async function getAllGames() {
   return null;
 }
 
+export async function getAllTeams(){
+  const q = `SELECT * FROM teams 
+  ORDER BY date ASC;`;
+  const result = await query(q)
+
+  if(result){
+    return result.rows
+  }
+
+  return null;
+}
+
 export async function createGame(game){
   const q = `
   INSERT INTO games
-    (date, homeName, awayName, homeScore, awayScore)
+    (date, home, away, homeScore, awayScore)
   VALUES
   ($1, $2, $3, $4, $5)`
   const result = await query(q, game);

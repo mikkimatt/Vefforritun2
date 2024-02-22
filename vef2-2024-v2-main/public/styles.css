@@ -1,7 +1,13 @@
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable media-feature-range-notation */
+/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable no-descending-specificity */
 /* Base styles */
+
 :root {
   --font-base-size: 16px;
-  --font-base-family: Helvetica, Arial, sans-serif;
+  --font-base-family: helvetica, arial, sans-serif;
   --max-width: 56rem;
   --spacing: 1rem;
   --color-border: #ddd;
@@ -14,7 +20,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   list-style: none;
   text-decoration: none;
 }
@@ -63,13 +69,6 @@ body {
   border-bottom: 2px solid white;
 }
 
-#menu-icon{
-  color: white;
-  font-size: 35px;
-  z-index: 10001;
-  cursor: pointer;
-  display: none;
-}
 
 
 /* Index styles */
@@ -90,7 +89,7 @@ section{
 }
 
 .hero-text h1{
-  font-family: 'Kanit', sans-serif;
+  font-family: Kanit, sans-serif;
   font-size: 30px;
   white-space: nowrap;
   line-height: 1;
@@ -203,47 +202,19 @@ section{
   }
 }
 @media (max-width: 1125px){
-  #menu-icon{
-      display: block;
-  }
-  .navlist{
-      position: absolute;
-      top: 100%;
-      right: -100%;
-      width: 300px;
-      height: 40vh;
-      background: #e62727;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 50px 20px;
-      transition: all .55s ease;
-  }
   .navlist a{
-      margin-left: 0;
+      margin-left: 10px;
       display: block;
-      margin: 7px 0;
-  }
-  .navlist.open{
-      right: 0;
-  }
-  .container {
-      flex-direction: column; /* Stack cards vertically on smaller screens */
-      align-items: center; /* Center the cards vertically */
-  }
-
-  .card {
-      width: 70%;
-      transform: translateY(10px);
-  }
-  input:checked + label {
-      width: 500px;
   }
 }
 
 @media (max-width: 680px){
   .hero-img img{
-      width: 100%;
+      width: 80%;
       height: auto;
+  }
+  .navlist a{
+    margin-left: 10px;
+    display: block;
   }
 }

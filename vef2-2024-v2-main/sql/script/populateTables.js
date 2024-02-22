@@ -91,7 +91,7 @@ async function createInserts() {
         const game = validGameday.games[gameKey];
         if (isValidGame(game)) { // Validate each individual game
           gameInserts.push(
-            `INSERT INTO games (date, homeName, awayName, homeScore, awayScore) VALUES ('${validGameday.date}', '${game.home.name}', '${game.away.name}', ${game.home.score}, ${game.away.score});`
+            `INSERT INTO games (date, home, away, homeScore, awayScore) VALUES ('${validGameday.date}', (SELECT id from teams WHERE name='${game.home.name}'), (SELECT id from teams WHERE name='${game.away.name}'), ${game.home.score}, ${game.away.score});`
           );
         }
       });

@@ -1,4 +1,7 @@
 import express from 'express';
+import {
+  getAllGames
+} from '../lib/db.js';
 
 export const indexRouter = express.Router();
 
