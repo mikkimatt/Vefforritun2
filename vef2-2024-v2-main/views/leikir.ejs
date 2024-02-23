@@ -1,7 +1,26 @@
 <%- include('header') -%>
 
 <section class="games">
-  <h2 class="games-title">Úrslit síðustu leikja</h2>
+  <h1>Seinustu leikir</h1>
+
+  <% let lastDate = ''; %>
+  <% locals.games.sort((a, b) => new Date(b.date) - new Date(a.date)); %>
+  <% for (const game of locals.games) { %>
+    <% if (lastDate !== game.date.toDateString()) { %>
+      <h2><%= game.date.toDateString() %></h2>
+      <% lastDate = game.date.toDateString(); %>
+    <% } %>
+
+    <div class="game">
+      <div class="team">
+        <span class="team-name"><%= game.home.name %></span>
+      </div>
+      <div class="score">
+        <span><%= game.home.score %> - <%= game.away.score %></span>
+      </div>
+      <div class="team">
+        <span class="team-name"><%= game.away.name %></span>
+      </div>
+    </div>
+  <% } %>
 </section>
-
-

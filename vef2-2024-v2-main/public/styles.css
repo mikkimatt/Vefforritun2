@@ -45,7 +45,6 @@ body {
   transition: top 0.3s ease-in-out;
 }
 
-
 .logo {
   max-width: 280px;
   max-height: 90px;
@@ -149,6 +148,106 @@ section{
   transform: translateY(-5px);
 }
 
+/* Stada styles */
+
+.stada{
+  text-align: center;
+
+  table{
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  thead{
+      background: var(--color-light);
+      color: white;
+  }
+
+  th, td{
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 1px solid #03c04a;
+      color: white;
+  }
+}
+
+.stada h1{
+  color: white;
+  font-size: 30px;
+  margin-top: 120px;
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: var(--color-mid);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Games styles */
+
+.games {
+  margin-top: 130px;
+}
+
+.games h1 {
+  font-size: 30px;
+  color: white;
+  background-color: var(--color-mid);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.games h2 {
+  width: fit-content;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #aef359;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #03c04a;
+  margin-bottom: 15px;
+}
+
+.team {
+  position: absolute;
+}
+
+.team:first-child {
+  left: 0;
+}
+
+.team:last-child {
+  right: 0;
+}
+
+.team-name{
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+/* Media queries */
 
 @media (max-width: 1535px){
   #header{

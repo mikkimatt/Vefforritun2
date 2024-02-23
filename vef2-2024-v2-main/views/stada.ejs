@@ -1,3 +1,27 @@
 <%- include('header') -%>
 
-<h1>Staðan í deildinni</h1>
+<section class="stada">
+  <h1>Staðan í deildinni</h1>
+  <table>
+    <thead>
+      <td>Lið</td>
+      <td>Stig</td>
+      <td>Leikir</td>
+      <td>Sigur</td>
+      <td>Jafntefli</td>
+      <td>Tap</td>
+    </thead>
+    <tbody>
+    <% for (const team of locals.stada) { %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.points %></td>
+        <td><%= team.games %></td>
+        <td><%= team.wins %></td>
+        <td><%= team.draws %></td>
+        <td><%= team.losses %></td>
+      </tr>
+    <% } %>
+    </tbody>
+  </table>
+</section>

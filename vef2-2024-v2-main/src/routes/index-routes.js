@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  getAllGames
+  getGames, getStandings,
 } from '../lib/db.js';
 
 export const indexRouter = express.Router();
@@ -14,7 +14,7 @@ async function indexRoute(req, res) {
 }
 
 async function leikirRoute(req, res) {
-  const games = await getAllGames(true);
+  const games = await getGames();
   if (games === null) {
     return res.status(500).send('Villa við að sækja leiki');
   }
@@ -27,9 +27,11 @@ async function leikirRoute(req, res) {
 }
 
 async function stadaRoute(req, res) {
+  const stada = await getStandings();
   return res.render('stada', {
     title: 'Staðan',
     time: new Date().toISOString(),
+    stada,
   });
 }
 
