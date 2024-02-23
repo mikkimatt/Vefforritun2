@@ -1,9 +1,11 @@
 <%- include('header') -%>
-
-<form method="post" action="/login" autocomplete="off">
-  <label>Notendanafn: <input type="text" name="username"></label>
-  <label>Lykilorð: <input type="password" name="password"></label>
-  <button>Innskrá</button>
-</form>
+<section class="login">
+  <h1>Innskráning</h1>
+  <form method="post" action="/login" autocomplete="off" class="login-form">
+    <label>Notendanafn: <input type="text" name="username" placeholder="Notandanafn"></label>
+    <label>Lykilorð: <input type="password" name="password" placeholder="Lykilorð"></label>
+    <button type="submit">Innskrá</button>
+  </form>
+</section>
 
 

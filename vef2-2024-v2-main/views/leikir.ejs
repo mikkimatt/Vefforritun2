@@ -1,7 +1,7 @@
 <%- include('header') -%>
 
 <section class="games">
-  <h1>Seinustu leikir</h1>
+  <h1>Síðustu leikir</h1>
 
   <% let lastDate = ''; %>
   <% locals.games.sort((a, b) => new Date(b.date) - new Date(a.date)); %>
