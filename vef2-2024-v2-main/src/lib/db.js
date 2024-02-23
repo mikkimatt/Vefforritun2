@@ -75,6 +75,7 @@ export async function getGames() {
 
     return games;
   }
+  return null;
 }
 
 export async function getAllTeams(){

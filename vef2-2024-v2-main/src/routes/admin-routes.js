@@ -14,8 +14,6 @@ async function createGames(req, res) {
   const {
     date, home, away, homeScore, awayScore,
   } = req.body;
-  console.log(req);
-  console.log(date, home, away, homeScore, awayScore);
   if (!date || !home || !away || !homeScore || !awayScore) {
     return res.status(400).send('Ófullnægjandi upplýsingar');
   }

@@ -1,6 +1,6 @@
 <%- include('header') -%>
-<section class="loggedIn">
-  <span class="loggedIn-user"><%= locals.user.name %> er innskráður</span>
+<section class="logged-in">
+  <span class="logged-in-user"><%= locals.user.name %> er innskráður</span>
 
   <form action="/admin" method="post" id="generate-game" class="game-form">
     <label for="date">Dagsetning</label>
@@ -36,9 +36,9 @@
       <option value="12">Hraðaliðið</option>
     </select>
     <label for="homeScore">Mörk Heimaliðs</label>
-    <input type="number" id="homeScore" name="homeScore" required>
+    <input type="number" id="homeScore" name="homeScore" min="0" required>
     <label for="awayScore">Mörk Útiliðs</label>
-    <input type="number" id="awayScore" name="awayScore" required>
+    <input type="number" id="awayScore" name="awayScore" min="0" required>
     <input type="submit" value="Skrá leik">
   </form>
   <script>
