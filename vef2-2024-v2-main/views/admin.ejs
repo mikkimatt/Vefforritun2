@@ -2,7 +2,7 @@
 <section class="loggedIn">
   <span class="loggedIn-user"><%= locals.user.name %> er innskráður</span>
 
-  <form action="/admin" method="post" class="game-form">
+  <form action="/admin" method="post" id="generate-game" class="game-form">
     <label for="date">Dagsetning</label>
     <input type="date" id="date" name="date" required>
     <label for="home">Heimalið</label>
@@ -41,6 +41,23 @@
     <input type="number" id="awayScore" name="awayScore" required>
     <input type="submit" value="Skrá leik">
   </form>
+  <script>
+    const form = document.getElementById('generate-game');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const response = await fetch('/admin', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(e.target))
+      });
+      if (response.ok) {
+        window.location.href = '/leikir';
+      } else {
+        return response.text().then(text => {
+          alert(text);
+        });
+      }
+    });
+  </script>
 </section>
 
 
