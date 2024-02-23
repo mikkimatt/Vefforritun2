@@ -1,5 +1,6 @@
 import express from 'express';
 import passport from 'passport';
+import { createGame } from '../lib/db.js';
 
 export const adminRouter = express.Router();
 
@@ -8,6 +9,34 @@ async function indexRoute(req, res) {
     title: 'Innskráning',
   });
 }
+
+async function createGames(req, res) {
+  const {
+    date, home, away, homeScore, awayScore,
+  } = req.body;
+
+  if (!date || !home || !away || !homeScore || !awayScore) {
+    return res.status(400).send('Ófullnægjandi upplýsingar');
+  }
+
+  if(home === away) {
+    return res.status(400).send('Heimilið og útilið geta ekki verið sama lið');
+  }
+
+  if(date > new Date().toISOString().split('T')[0]){
+    return res.status(400).send('Ekki hægt að búa til leik í framtíðinni');
+  }
+
+  const result = await createGame([date, home, away, homeScore, awayScore]);
+
+  if (result) {
+    return res.redirect('/leikir');
+  }
+
+  return res.status(500).send('Villa við að búa til leik');
+
+}
+
 
 async function adminRoute(req, res) {
   const user = req.user ?? null;
@@ -33,6 +62,7 @@ function ensureLoggedIn(req, res, next) {
 
 adminRouter.get('/login', indexRoute);
 adminRouter.get('/admin', ensureLoggedIn, adminRoute);
+adminRouter.post('/admin', ensureLoggedIn, createGames);
 adminRouter.post(
   '/login',
 

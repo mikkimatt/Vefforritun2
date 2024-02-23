@@ -1,6 +1,46 @@
 <%- include('header') -%>
 <section class="loggedIn">
   <span class="loggedIn-user"><%= locals.user.name %> er innskráður</span>
+
+  <form action="/admin" method="post" class="game-form">
+    <label for="date">Dagsetning</label>
+    <input type="date" id="date" name="date" required>
+    <label for="home">Heimalið</label>
+    <select name="home">
+      <option value="1">Boltaliðið</option>
+      <option value="2">Dripplararnir</option>
+      <option value="3">Skotföstu kempurnar</option>
+      <option value="4">Markaskorarnir</option>
+      <option value="5">Sigurliðið</option>
+      <option value="6">Risaeðlurnar</option>
+      <option value="7">Framherjarnir</option>
+      <option value="8">Fljótu fæturnir</option>
+      <option value="9">Vinningshópurinn</option>
+      <option value="10">Ósigrandi skotfólkið</option>
+      <option value="11">Óhemjurnar</option>
+      <option value="12">Hraðaliðið</option>
+    </select>
+    <label for="away">Útilið</label>
+    <select name="away">
+      <option value="1">Boltaliðið</option>
+      <option value="2">Dripplararnir</option>
+      <option value="3">Skotföstu kempurnar</option>
+      <option value="4">Markaskorarnir</option>
+      <option value="5">Sigurliðið</option>
+      <option value="6">Risaeðlurnar</option>
+      <option value="7">Framherjarnir</option>
+      <option value="8">Fljótu fæturnir</option>
+      <option value="9">Vinningshópurinn</option>
+      <option value="10">Ósigrandi skotfólkið</option>
+      <option value="11">Óhemjurnar</option>
+      <option value="12">Hraðaliðið</option>
+    </select>
+    <label for="homeScore">Mörk Heimaliðs</label>
+    <input type="number" id="homeScore" name="homeScore" required>
+    <label for="awayScore">Mörk Útiliðs</label>
+    <input type="number" id="awayScore" name="awayScore" required>
+    <input type="submit" value="Skrá leik">
+  </form>
 </section>
 
 
