@@ -18,7 +18,6 @@ export async function listTeams(
     next: NextFunction,
 ): Promise<Response | void> {
     const teams = await getTeams();
-    console.log(teams);
     if (!teams) {
         return next(new Error('No teams found'));
     }

@@ -5,7 +5,7 @@ import { router } from './routes/api.js';
 import { handleError} from './lib/requests.js';
 
 dotenv.config();
-console.log(process.env);
+
 
 const app = express();
 
