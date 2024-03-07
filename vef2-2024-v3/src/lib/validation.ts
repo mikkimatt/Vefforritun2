@@ -15,7 +15,7 @@ function handleErrors(errors: any, res: Response) {
   return res.status(400).json({ errors: err });
 }
 
-// Hjálp frá copilot
+
 async function validateRequest(
   req: Request,
   res: Response,

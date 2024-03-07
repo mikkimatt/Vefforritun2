@@ -42,9 +42,8 @@ export function teamMapper(potentialTeam: unknown): Team | null {
   const mapped: Team = {
     id: team.id,
     name: team.name,
+    slug: team.slug,
     description: team.description ?? undefined,
-    created: team.created,
-    updated: team.updated,
   };
 
   return mapped;
@@ -52,6 +51,7 @@ export function teamMapper(potentialTeam: unknown): Team | null {
 
 export function teamsMapper(potentialTeams: unknown): Array<Team> {
   const teams = potentialTeams as Array<unknown> | null;
+  console.log(teams);
 
   if (!teams || !Array.isArray(teams)) {
     return [];

@@ -12,8 +12,8 @@ export type Games = {
 export type Game = {
     id: number;
     date: string;
-    home: string;
-    away: string;
+    home: number;
+    away: number;
     home_score: number;
     away_score: number;
     created: string;
@@ -25,14 +25,11 @@ export type Teams = {
     slug: string;
     name: string;
     description: string;
-    created: string;
-    updated: string;
 };
 
 export type Team = {
     id: number;
     name: string;
+    slug: string;
     description: string;
-    created: string;
-    updated: string;
 };

@@ -14,9 +14,14 @@ import {
   listTeams,
   updateTeam 
 } from './teams.js';
+import { expressjwt } from 'express-jwt';
+import { generateToken, getSecret } from '../lib/token.js';
 
 export const router = express.Router();
 
+/*
+router.use(expressjwt({ secret: getSecret(), algorithms: ['HS256'] }).unless({ path: ['/token', '/'] }));
+*/
 export async function index(req: Request, res: Response) {
   return res.json([
     {
@@ -26,10 +31,6 @@ export async function index(req: Request, res: Response) {
     {
       href: '/teams/:slug',
       methods: ['GET', 'PATCH', 'DELETE'],
-    },
-    {
-      href: '/teams/:slug/games',
-      methods: ['GET'],
     },
     {
       href: '/games',
@@ -42,6 +43,8 @@ export async function index(req: Request, res: Response) {
   ]);
 }
 
+router.use('/token', generateToken);
+
 router.get('/', index);
 
 router.get('/teams', listTeams);
@@ -49,7 +52,7 @@ router.get('/teams/:slug', getTeam);
 router.post('/teams', createTeam);
 router.patch('/teams/:slug', updateTeam);
 router.delete('/teams/:slug', deleteTeam);
-router.get('/teams/:slug/games', listGamesByTeam);
+
 
 router.get('/games', listGames);
 router.get('/games/:id', getGame);
