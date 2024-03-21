@@ -1,0 +1,10 @@
+.game-page a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.game-page a:hover {
+  color: #aef359;
+  border-bottom: 2px solid #aef359;
+}

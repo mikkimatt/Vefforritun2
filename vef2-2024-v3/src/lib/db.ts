@@ -154,11 +154,11 @@ export async function insertGame(
   home: string,
   away: string,
   home_score: number,
-  awayScore: number
+  away_score: number
 ): Promise<Game | null> {
   const result = await query(
     "insert into games (date, home, away, home_score, away_score) values ($1, $2, $3, $4, $5) returning *",
-    [date, home, away]
+    [date, home, away, home_score, away_score]
   );
   if (!result || !result.rows || result.rows.length !== 1) {
     return null;

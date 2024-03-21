@@ -38,6 +38,12 @@ export function GameDetail() {
     return team ? team.name : "";
   }
 
+  function deleteGame() {
+    fetch(`https://vefforritun2-production-c4fd.up.railway.app/games/${game.id}`, {
+      method: "DELETE",
+    });
+  }
+
   return (
     <div className="game-detail">
       <div>
@@ -51,6 +57,13 @@ export function GameDetail() {
         <div>
           <span>{getTeamName(game.away)}</span>
         </div>
+        <button onClick={() => {
+            if (window.confirm("Ertu viss um að þú viljir eyða leik?")) {
+              deleteGame();
+            }
+            window.location.href = "/games";
+            window.alert("Leik hefur verið eytt");
+        }}>Eyða leik</button>
       </div>
     </div>
   );

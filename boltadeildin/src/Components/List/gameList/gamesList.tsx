@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './games.css';
+import './gameslist.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 type Game = {

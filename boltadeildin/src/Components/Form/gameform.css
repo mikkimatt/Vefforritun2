@@ -1,0 +1,35 @@
+
+form {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px; 
+}
+
+select,
+input {
+    margin-bottom: 10px;
+    padding: 10px; 
+    font-size: 16px; 
+}
+
+button {
+    padding: 15px 30px; 
+    background-color: var(--color-light);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; 
+}
+
+button:hover {
+    background-color: var(--color-mid);
+}
