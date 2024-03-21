@@ -71,10 +71,10 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         });
 
         if (response.ok) {
-            // Game successfully created
+            
             console.log('Game created!');
         } else {
-            // Error occurred while creating the game
+            
             console.error('Failed to create game');
         }
     } catch (error) {
@@ -89,7 +89,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         <select value={selectedHomeTeam} onChange={handleHomeTeamChange}>
           <option value="">Veldu heimalið</option>
           {teams.map((team) => (
-            <option key={team.id} value={team.name}>
+            <option key={team.id} value={team.id}>
               {team.name}
             </option>
           ))}
@@ -101,7 +101,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         <select value={selectedAwayTeam} onChange={handleAwayTeamChange}>
           <option value="">Veldu útilið</option>
           {teams.map((team) => (
-            <option key={team.id} value={team.name}>
+            <option key={team.id} value={team.id}>
               {team.name}
             </option>
           ))}
