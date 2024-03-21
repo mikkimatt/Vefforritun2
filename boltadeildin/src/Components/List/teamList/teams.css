@@ -1,0 +1,35 @@
+.teams-container {
+    margin: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.teams-container a {
+    text-decoration: none;
+    color: white;
+}
+
+.teams-container h3 {
+    font-size: 25px;
+}
+
+
+.team-card {
+    position: relative;
+    display: inline-block;
+    margin-right: 25px;
+    width: calc(25% - 25px);
+    align-items: center;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    background-color: var(--color-light);
+    border-radius: 5px;
+}
+
+
+.team-card:hover {
+    background-color: var(--color-mid);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all ease 0.5s;
+}

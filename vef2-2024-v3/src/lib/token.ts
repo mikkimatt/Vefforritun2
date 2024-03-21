@@ -16,6 +16,7 @@ export async function generateToken(
 
 export function getSecret(){
 const secret = process.env.SECRET;
+console.log(process.env.SECRET);
   console.log(secret);
     if (!secret) {
         console.error('No secret provided');

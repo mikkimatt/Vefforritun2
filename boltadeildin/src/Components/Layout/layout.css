@@ -1,0 +1,39 @@
+
+.layout{
+    height: 100vh;
+    width: 100%;
+    background: #017201;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 2rem;
+    padding-right: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(7, 252, 7);
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    border-bottom: 2px solid white;
+}

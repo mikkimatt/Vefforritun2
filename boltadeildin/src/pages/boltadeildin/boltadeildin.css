@@ -1,0 +1,19 @@
+/* Reset default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the heading */
+h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Style the paragraph */
+p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.5;
+}

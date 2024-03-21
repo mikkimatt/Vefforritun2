@@ -30,7 +30,7 @@ nav{
     margin-top: 50px;
     margin-left: 50px;
     width: 100px;
-    filter: drop-shadow(2px 2px 2px white);
+    filter: drop-shadow(2px 2px 10px white);
 }
 
 .container .links a{

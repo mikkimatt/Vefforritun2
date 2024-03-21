@@ -1,0 +1,64 @@
+body {
+    background-color: #017201;
+    font-family: var(--font-base-family);
+    font-size: var(--font-base-size);
+    color: white;
+}
+
+.games-container h3 {
+    width: fit-content;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    color: white;
+    background-color: #aef359;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.team {
+  position: absolute;
+}
+
+.team:first-child {
+  left: 5%;
+}
+
+.team:last-child {
+  right: 5%;
+}
+
+.team-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  white-space: nowrap;
+  padding: 50px;
+}
+
+.score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.game:hover {
+  background-color: var(--color-light);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all ease 0.5s;
+}
+
