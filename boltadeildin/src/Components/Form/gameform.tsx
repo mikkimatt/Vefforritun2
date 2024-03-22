@@ -136,7 +136,10 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         />
       </label>
       <br />
-      <button type="submit">Stofna leik</button>
+      <button type="submit" onClick={() => {
+        window.location.href = "/games";
+        alert('Leikur hefur verið stofnaður');
+      }}>Stofna leik</button>
     </form>
   );
 }
