@@ -1,3 +1,5 @@
+import { ListGames } from "../../Components/List/gameList/gamesList";
+import { ListTeams } from "../../Components/List/teamList/teamsList";
 import "./boltadeildin.css"
 
 export function Boltadeildin() {
@@ -7,6 +9,8 @@ export function Boltadeildin() {
             <p>
                 Velkominn í Boltadeildina!!.
             </p>
+            <ListTeams />
+            <ListGames />
         </div>
     );
 }

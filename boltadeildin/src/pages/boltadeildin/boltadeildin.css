@@ -1,4 +1,8 @@
 /* Reset default styles */
+.container body {
+    overflow-y: hidden;
+}
+
 body, h1, p {
     margin: 0;
     padding: 0;

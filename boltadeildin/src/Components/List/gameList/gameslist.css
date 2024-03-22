@@ -3,6 +3,7 @@ body {
     font-family: var(--font-base-family);
     font-size: var(--font-base-size);
     color: white;
+    overflow-x: hidden;
 }
 
 .games-container h3 {
