@@ -2,4 +2,4 @@
 ## Boltadeildin uppsett með React
 ### Mikael Matthíasson - mim23@hi.is
 
-### Slóð á railway: 
+### Slóð á Vercel: https://vefforritun2.vercel.app/
