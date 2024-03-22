@@ -5,7 +5,7 @@ export function Boltadeildin() {
         <div className="container">
             <h2>Boltadeildin</h2>
             <p>
-                This is the Boltadeildin page.
+                Velkominn í Boltadeildina!!.
             </p>
         </div>
     );
