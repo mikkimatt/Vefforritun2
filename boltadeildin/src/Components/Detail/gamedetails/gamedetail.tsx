@@ -58,12 +58,12 @@ export function GameDetail() {
           <span>{getTeamName(game.away)}</span>
         </div>
         <button onClick={() => {
-            if (window.confirm("Ertu viss um að þú viljir eyða þessu liði?")) {
+            if (window.confirm("Ertu viss um að þú viljir eyða þessum leik?")) {
               deleteGame();
             }
             window.location.href = "/games";
             window.alert("Leik hefur verið eytt");
-        }}>Eyða liði</button>
+        }}>Eyða Leik</button>
       </div>
     </div>
   );

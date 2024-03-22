@@ -5,8 +5,11 @@ import "./teamdetail.css";
 type Team = {
     id: number,
     name: string,
+    slug: string,
     description: string,
 };
+
+
 
 export function TeamDetail() {
     const location = useLocation();
