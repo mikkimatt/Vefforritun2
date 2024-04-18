@@ -13,6 +13,12 @@ h := argmin ||xi - mj|| þar sem argmin er 1<=j<=k. Loks er notað k-means falli
 ## Framkvæmd og útskýringar.
 Til þess að öðlast skilning á efninu byrjuðum við að skoða mikið af greinum á internetinu, t.d. 
 
+| Heimildir |
+| :---: |
+| `Fyrirlestra nótur úr [Kafla 3 - Flokkun vigra.](https://cs.hi.is/strei/kafli03/)` |
+| `YouTube: [Umfjöllun StatQuest um K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&ab_channel=StatQuestwithJoshStarmer)` |
+| `Medium: [Skref fyrir skref á K-means](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6)` |
+
 Fyrirlestra nótur úr [Kafla 3 - Flokkun vigra.](https://cs.hi.is/strei/kafli03/)
 YouTube: [Umfjöllun StatQuest um K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&ab_channel=StatQuestwithJoshStarmer)
 Medium: [Skref fyrir skref á K-means](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6)
