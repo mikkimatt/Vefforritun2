@@ -37,7 +37,7 @@ def update(data, assignments, centroids):
     
     # Reiknum nýja miðpunkta með því að taka meðaltal af punktunum í flokkunum.
     for i in range(len(centroids)):
-        cluster = np.where(assignments == i)
-        nyrMidpunktur.append(np.mean(data[cluster], axis=0))
+        flokkur = np.where(assignments == i)
+        nyrMidpunktur.append(np.mean(data[flokkur], axis=0))
     return nyrMidpunktur
 ```
