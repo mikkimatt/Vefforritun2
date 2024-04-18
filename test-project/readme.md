@@ -19,11 +19,6 @@ Til þess að öðlast skilning á efninu byrjuðum við að skoða mikið af gr
 | YouTube: [Umfjöllun StatQuest um K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&ab_channel=StatQuestwithJoshStarmer) |
 | Medium: [Skref fyrir skref á K-means](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6) |
 
-Fyrirlestra nótur úr [Kafla 3 - Flokkun vigra.](https://cs.hi.is/strei/kafli03/)
-YouTube: [Umfjöllun StatQuest um K-means](https://www.youtube.com/watch?v=4b5d3muPQmA&ab_channel=StatQuestwithJoshStarmer)
-Medium: [Skref fyrir skref á K-means](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6)
-
-
 Næst var það að fikra okkur áfram í kóðun reikniritsins með hjálp úr kafla 10 um numpy
 
 K-means reikniritið er öflugt machine learning reiknirit sem tekur inn gögn í formi vigra eða gagna punkta og flokkar þá niður eftir bestu miðju hvers flokks. Þ.a.l. Eru gæði k-means mjög háð því í hve marga flokka gögnin eiga að skiptast. Það getur reynst flókið að velja rétt magn af flokkum til að skipta gögnunum í. Við getum nýtt okkur þetta til ákvarða hvaða gögn eru lík. T.d. í tilraunum á hópi fólks eða dýra sem gera eitthvað ákveðið. Eins og hvaða hópar fólks kýs eitthvað ákveðið í þingkosningum útfrá svipuðum svörum við spurningum eða flokka dýr eftir ákveðinni hegðun.
