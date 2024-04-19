@@ -10,3 +10,4 @@ def lesa_gogn():
     merged_data = pd.merge(pd.merge(stop_times, stops, on='stop_id'), trips, on='trip_id')
     return merged_data
 ```
+s
